@@ -1,0 +1,3 @@
+{#currencies}
+  <option value="{.label}">{.label}</option>
+{/currencies}

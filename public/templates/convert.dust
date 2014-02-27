@@ -1,0 +1,6 @@
+{>"layouts/master" /}
+
+{<body}
+    <h3>{@pre type="content" key="convert.currency"/}</h3>
+    {>"partials/currency_form"/}
+{/body}
