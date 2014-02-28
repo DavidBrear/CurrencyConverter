@@ -12,6 +12,9 @@ var kraken = require('kraken-js'),
 app.configure = function configure(nconf, next) {
   db.config(nconf.get('databaseConfig'));
 
+  global.dataLocation = nconf.get('dataLocation');
+  global.exchangeApi = nconf.get('exchangeApi');
+
   //probably want to put this in a background job but for now lets put it here.
   http.get(nconf.get('exchangeApi').url + nconf.get('exchangeApi').key, function (res) {
 
