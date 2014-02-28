@@ -2,7 +2,8 @@
   <div class='row'>
     <div class='col-sm-4'>
       <div class='form-group'>
-        <select name='from' class='form-control'>
+        <label for='from'>Starting Currency</label>
+        <select name='from' class='selectpicker form-control'>
           <option>From Currency</option>
           {>"partials/currencies"/}
         </select>
@@ -10,12 +11,14 @@
     </div>
     <div class='col-sm-4'>
       <div class='form-group'>
+        <label for='amount'>Amount</label>
         <input type='text' class='form-control' placeholder='5.00' name='amount'>
       </div>
     </div>
     <div class='col-sm-4'>
       <div class='form-group'>
-        <select name='to' class='form-control'>
+        <label for='to'>Destination Currency</label>
+        <select name='to' class='selectpicker form-control'>
           <option>To Currency</option>
           {>"partials/currencies"/}
         </select>

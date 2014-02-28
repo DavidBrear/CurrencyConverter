@@ -21,20 +21,20 @@ module.exports = function (app) {
   });
   app.get('/convert', function (req, res) {
 
-    Converter.convert(req.query.from, req.query.to, req.query.amount, function (err, from_curr, to_curr, to_amount) {
-      if (err){
-        res.render('errors/bad_input', {bad_input: true});
-        return;
+    filters.loadCurrencies(function (err, currs) {
+      if (err) {
+        res.redirect('errors/missing_currency');
       }
-      var from_amount = parseFloat(req.query.amount, 10);
+      Converter.convert(req.query.from, req.query.to, req.query.amount, function (err, from_curr, to_curr, to_amount) {
+        if (err){
+          res.render('index', {currencies: currs, bad_input: true});
+          return;
+        }
+        var from_amount = parseFloat(req.query.amount, 10);
 
-      if (isNaN(from_amount)) {
-        res.render('errors/bad_input', {amount_nan: true});
-        return;
-      }
-      filters.loadCurrencies(function (err, currs) {
-        if (err) {
-          res.redirect('errors/missing_currency');
+        if (isNaN(from_amount)) {
+          res.render('index', {currencies: currs, bad_input: true});
+          return;
         }
         var model = {
           currencies: currs,

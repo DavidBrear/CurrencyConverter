@@ -1,6 +1,19 @@
 {>"layouts/master" /}
 
 {<body}
-    <h3>{@pre type="content" key="convert.currency"/}</h3>
-    {>"partials/currency_form"/}
+  <div class='jumbotron'>
+    <h1 class='text-muted nm-np'>
+      <small>
+        {#from_curr}
+          {from_amount} ({.label})
+        {/from_curr}
+        &nbsp;{@pre type="content" key="convert.equals"/}
+      </small>
+      <br>
+      {#to_curr}
+        {to_amount} ({.label})
+      {/to_curr}
+    </h1>
+  </div>
+  {>"partials/currency_form"/}
 {/body}
