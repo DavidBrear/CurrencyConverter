@@ -6,7 +6,7 @@
   "exchangeApi": {
     "url": "http://openexchangerates.org/api/latest.json?",
     "remoteApi": "http://openexchangerates.org/api/convert/AMOUNT/FROM/TO?",
-    "key": "app_id=c1ae9b22b0604a3bab79ecd7a2c753b9"
+    "key": "app_id=c1ae9b22b0604a3bab79ecd7a2c753b9" //This is my demo app key.
   },
   "dataLocation": "local" //Options: "local" or "remote"
 // "host": "localhost",
